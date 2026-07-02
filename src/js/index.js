@@ -58,19 +58,56 @@ function initServiceSwiper() {
 initServiceSwiper();
 window.addEventListener('resize', initServiceSwiper);
 
-const btn = document.querySelector('.services__read-more');
-const block = document.querySelector('.services__description');
+const readMoreBtn = document.querySelector('.services__read-more');
+const description = document.querySelector('.services__description');
+const hiddenText = document.querySelector('.services__hidden-text');
 
-if (btn && block) {
-    const text = btn.querySelector('.services__btn-text');
+if (readMoreBtn && description && hiddenText) {
+    const btnText = readMoreBtn.querySelector('.services__btn-text');
+    hiddenText.style.display = 'none';
 
-    btn.addEventListener('click', () => {
-        block.classList.toggle('open');
+    readMoreBtn.addEventListener('click', () => {
+        const expanded = description.classList.toggle('open');
 
-        if (text) {
-            text.textContent = block.classList.contains('open')
-                ? 'Скрыть'
-                : 'Читать дальше';
-        }
+        hiddenText.style.display = expanded ? 'block' : 'none';
+        btnText.textContent = expanded ? 'Скрыть' : 'Читать далее';
+    });
+}
+
+const brandsBtn = document.querySelector('.more');
+const brandSlides = document.querySelectorAll('.brands .swiper-slide');
+
+if (brandsBtn) {
+    brandsBtn.addEventListener('click', () => {
+        const expanded = brandsBtn.classList.toggle('expanded');
+
+        brandSlides.forEach((slide, index) => {
+            if (index >= 8) {
+                slide.style.display = expanded ? 'block' : 'none';
+            }
+        });
+
+        brandsBtn.innerHTML = expanded
+            ? '<img src="./img/expand.png" alt=""> Скрыть'
+            : '<img src="./img/expand.png" alt=""> Показать все';
+    });
+}
+
+const serviceBtn = document.querySelector('.service-card__more');
+const serviceSlides = document.querySelectorAll('.service-card .swiper-slide');
+
+if (serviceBtn) {
+    serviceBtn.addEventListener('click', () => {
+        const expanded = serviceBtn.classList.toggle('expanded');
+
+        serviceSlides.forEach((slide, index) => {
+            if (index >= 4) {
+                slide.style.display = expanded ? 'block' : 'none';
+            }
+        });
+
+        serviceBtn.innerHTML = expanded
+            ? '<img src="./img/expand.png" alt=""> Скрыть'
+            : '<img src="./img/expand.png" alt=""> Показать все';
     });
 }

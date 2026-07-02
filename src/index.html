@@ -60,7 +60,8 @@
 </aside>
 
 <main class="page__main">
-    <section class="services">
+   <section class="services">
+    <div class="services__header">
         <h2 class="services__title">Услуги и сервисы</h2>
 
         <div class="services__actions">
@@ -70,34 +71,40 @@
             <span>Статус ремонта</span>
             <img class="action__icon" src="./img/checkstatus.png" alt="status">
         </div>
-    </section>
+    </div>
+
     <div class="services__menu">
-        <span class="page__item">Рекомендуемые бренды</span>
+        <span class="page__item">Ремонтируемые бренды</span>
         <span class="page__item">Дополнительные услуги</span>
         <span class="page__item">Цены на услуги</span>
         <span class="page__item">Адреса сервисных центров</span>
         <span class="page__item">Специальные цены</span>
     </div>
+
     <span class="reviews">Отзывы</span>
-    <div class="services__description">
+    <div class="services__intro">
+        <div class="services__description">
+            <p class="services__text">
+                Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+            </p>
 
-        <p class="services__text">
-         Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
-        </p>
-<p class="services__hidden-text">
-Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким. 
-</p>
+            <p class="services__hidden-text">
+                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и,
+                в свою очередь, советуют нас родным и близким.
+            </p>
 
-       <span class="services__read-more">
-  <img src="./img/expand.png" alt="expand">
-  <span class="services__btn-text">Читать дальше</span>
-</span>
+            <button class="services__read-more">
+                <img src="./img/expand.png" alt="expand">
+                <span class="services__btn-text">Читать далее</span>
+            </button>
+
+        </div>
+
+        <img class="services__image" src="./img/_MG_3223.png" alt="CPS">
+
     </div>
+</section>
 
-    <img class="services__image" src="./img/_MG_3223.png" alt="CPS">
-
-</div>
-</div>
    <section class="brands">
     <h2 class="brands__title">Ремонт техники различных брендов</h2>
 

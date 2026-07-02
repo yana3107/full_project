@@ -163,11 +163,14 @@ body {
 }
 
 .page {
+  display: flex;
+  width: 100%;
+
   &__main {
     flex: 1;
     width: 100%;
-    max-width: 1120px;
-    padding: 24px;
+    max-width: none;
+    padding: 24px 32px;
   }
 
   &__item {
@@ -184,24 +187,12 @@ body {
 }
 .services {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 32px;
+  flex-direction: column;
 
-  &__description {
-    flex: 1;
-  }
-
-  &__image {
-    width: 360px;
-    height: auto;
-    flex-shrink: 0;
-    border-radius: 6px;
-  }
-
-  &__title {
-    font-size: 28px;
-    font-weight: 700;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__actions {
@@ -223,6 +214,25 @@ body {
     }
   }
 
+  &__intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  &__description {
+    flex: 1;
+  }
+
+  &__image {
+    width: 360px;
+    height: auto;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
   &__hidden-text {
     display: none;
     margin-top: 10px;
@@ -238,10 +248,11 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    margin-top: 16px;
     cursor: pointer;
-    margin-top: 10px;
-    color: #7e7e82;;
-    user-select: none;
+    background: none;
+    border: none;
+    padding: 0;
   }
 }
 
@@ -626,6 +637,25 @@ body {
     overflow: hidden;
     box-sizing: border-box;
   }
+  .services {
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__description {
+    width: 100%;
+    order: 1;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    order: 2;
+    border-radius: 6px;
+  }
+}
 
   .brands {
     .swiper-wrapper {
@@ -894,4 +924,15 @@ body {
 .service-card.open .swiper-slide {
   display: flex;
 }
+.page__sidebar {
+    transform: translateX(0);
+    position: sticky;
+    width: 320px;
+    flex-shrink: 0;
+    box-shadow: none;
+  }
+
+  .page__main {
+    margin-left: 0;
+  }
 }
