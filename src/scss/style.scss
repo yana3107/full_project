@@ -876,6 +876,22 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1119px) {
 
+   .header {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    background: #fff;
+    border-bottom: 1px solid #d9fff5;
+
+    &__logo {
+      margin-left: 20px;
+    }
+
+    &__actions {
+      margin-left: auto;
+      gap: 16px;
+    }
+  }
   .brands__swiper,
   .service-card__swiper {
     overflow: visible;
