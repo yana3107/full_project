@@ -41,7 +41,7 @@ git init -b main
 
 ```properties
 git add . && git commit -m "initial commit"
-```
+ ```
 
 Соединить локальный репозиторий с удаленным, заменив *USER* (на ваше имя пользователя в GitHub) и *REPO* (название вашего репозитория):
 

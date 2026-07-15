@@ -58,6 +58,33 @@ body {
     width: 40px;
     height: 40px;
   }
+
+   &__contacts,
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__contacts {
+    margin-left: auto;
+  }
+
+  &__divider {
+    width: 2px;
+    height: 32px;
+    background: #eaeaea;
+    border-radius: 1px;
+    margin: 0 16px;
+  }
+
+  &__action {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+  }
 }
 
 .sidebar {
@@ -125,6 +152,7 @@ body {
   transform: translateX(0);
     }
   }
+
 }
 
 .contacts {
@@ -165,18 +193,19 @@ body {
     display: flex;
     gap: 8px;
     margin-top: 20px;
-   border: none;
-  background: transparent;
+  }
+  &__language {
   padding: 0;
-  color: #1b1c21;
-  font: inherit;
+  border: 0;
+  background: transparent;
   cursor: pointer;
   font: inherit;
+  color: #1b1c21;
 
-    &:hover {
-      color: #7e7e82;
-    }
+  &:hover {
+    color: #7e7e82;
   }
+}
 }
 
 
@@ -197,13 +226,14 @@ body {
   flex-direction: column;
 
   &__list {
-  display: flex;
-  gap: 18px;
-  list-style: none;
-  margin: 24px 0 0;
-  padding: 0;
-  flex-wrap: wrap;
-}
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    width: max-content;
+  }
 
     &__menu-item {
     display: block;
@@ -227,25 +257,22 @@ body {
     background: white;
   }
 
-  &__actions {
-    display: flex;
+&__actions {
+  display: flex;
   align-items: center;
   gap: 8px;
-
-  border: none;
+  padding: 0;
+  border: 0;
   background: transparent;
   cursor: pointer;
-  padding: 0;
   font: inherit;
-   color: #1b1c21;
-  }
-  
+  color: #1b1c21;
+}
 
-  &__menu {
+ &__menu {
     display: flex;
-    gap: 12px;
     overflow-x: auto;
-    padding-bottom: 8px;
+    overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
@@ -253,6 +280,7 @@ body {
       display: none;
     }
   }
+
 
   &__intro {
     display: flex;
@@ -394,6 +422,14 @@ body {
 
   &__button {
     display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    color: #1b1c21;
   }
 
   &__button-icon {
@@ -465,6 +501,14 @@ body {
 
   &__more {
     display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    color: #1b1c21;
   }
    &--expanded {
     .swiper-slide {
@@ -617,6 +661,9 @@ body {
 
 
 @media (max-width: 767px) {
+  .header__contacts {
+  display: none;
+}
   .page {
     &__main {
       width: 100%;
@@ -653,6 +700,12 @@ body {
       margin-left: auto;
     }
   }
+  .sidebar__close-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
 
   .services {
     &__header {
@@ -871,11 +924,14 @@ body {
   .service-card__button,
 .brands__button {
   display: flex;
-  
 }
 }
+
 @media (min-width: 768px) and (max-width: 1119px) {
 
+  .header__contacts {
+  display: flex;
+}
    .header {
     display: flex;
     align-items: center;
@@ -938,10 +994,21 @@ body {
   .prices__table {
     display: table;
   }
+  .services__actions {
+  display: none;
+}
+.sidebar__close-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
 }
 
 @media (min-width: 1120px) {
-
+ .sidebar__close-button {
+        display: none;
+    }
     .header {
     display: none;
   }
@@ -960,13 +1027,15 @@ body {
   gap: 16px;
 }
 
-  .brands .swiper-slide {
-    width: calc(12.5% - 14px) !important;
-  }
+.brands .swiper-slide {
+  width: calc((100% - 48px) / 4) !important;
+  display: flex;
+}
 
-  .service-card .swiper-slide {
-    width: calc(25% - 12px) !important;
-  }
+.service-card .swiper-slide {
+  width: calc((100% - 48px) / 4) !important;
+  display: flex;
+}
 
   .brands__button,
   .service-card__button {
@@ -974,6 +1043,10 @@ body {
     align-items: center;
     gap: 8px;
   }
+  .brands__card {
+  width: 100%;
+  height: 72px;
+}
 
 .service-card:not(.service-card--expanded) .swiper-slide:nth-child(n + 5) {
     display: none;
@@ -986,11 +1059,6 @@ body {
 .brands:not(.brands--expanded) .swiper-slide:nth-child(n + 9) {
     display: none;
   }
-
-  .brands.brands--expanded .swiper-slide {
-    display: block;
-  }
-
   .brands--expanded .swiper-slide {
     display: flex;
   }
@@ -1029,5 +1097,8 @@ body {
 
   .prices__table {
     display: table;
+  }
+   .services__actions {
+    display: flex;
   }
 }
